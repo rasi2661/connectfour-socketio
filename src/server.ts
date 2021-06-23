@@ -4,12 +4,13 @@ import * as path from "path";
 
 const app = express();
 app.set("port", process.env.PORT || 3000);
+app.use(express.static('./dist/public'))
 
 let http = require("http").Server(app);
 let io = require("socket.io")(http);
 
 app.get("/", (req: any, res: any) => {
-  res.sendFile(path.resolve("./client/index.html"));
+  res.sendFile(path.resolve("./src/public/index.html"));
 });
 
 io.on("connection", function(socket: any) {
