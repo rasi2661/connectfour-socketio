@@ -4,15 +4,61 @@
     <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>Unique page title - My Site</title>
   </head>
 
   <body>
-    <!-- Content -->
-    <h1>Hello World!</h1>
+    <div style="margin-top: 25px;" class="container">
+      <div class="row">
+        <div style="min-width: 250px;" class="col-3">
+          <!-- Current Game Info -->
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <h5 class="card-title">Current Game: None</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Player 1 vs Player 2</h6>
+              <p class="card-text">
+                <span>Time elapsed: 00:00</span><br />
+                <span>Status: None</span>
+              </p>
+            </div>
+          </div>
+          <!-- Gmeas List -->
+          <div style="margin-top: 25px;">
+            <div class="d-grid">
+              <button type="button" class="btn btn-primary">Create Game</button>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Player 1</th>
+                  <th scope="col">Player 2</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td><button type="button" class="btn btn-success">Join</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Current Game  -->
+        <div class="col-9">
+          <div id="tileContainer"></div>
+        </div>
+      </div>
+    </div>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/client.js"></script>
   </body>
